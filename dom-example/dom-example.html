@@ -3,6 +3,18 @@
   <head>
     <meta charset="utf-8" />
     <title>Simple DOM example</title>
+    <style>
+
+      .highlight 
+      {
+        color: white;
+        background-color: black;
+        padding: 10px;
+        width: 250px;
+        text-align: center;
+      }
+      
+    </style>
   </head>
   <body>
     <section>
@@ -31,6 +43,9 @@
 
       sect.appendChild(linkPara);
       linkPara.parentNode.removeChild(linkPara);
+
+      para.setAttribute('class', 'highlight');
+
     </script>
   </body>
 </html>
