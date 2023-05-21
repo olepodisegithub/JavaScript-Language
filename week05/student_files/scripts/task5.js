@@ -123,20 +123,42 @@ function sortBy()
 {
     reset()
     var sorttext = document.getElementById("sortBy")
-    var text = sorttext.options[sorttext.selectedIndex].text
-    if(text = "Temple Name Ascending")
+    var text = sorttext.options[sorttext.selectedIndex].value
+    if(text === "templeNameAscending")
     {
-        listoftemples.sort()
+        output(listoftemples.sort((a, b) => a.templeName.localeCompare(b.templeName)))
     }
-    else if(text = "Temple Name Descending")
+    else if(text === "templeNameDescending")
     {
-        listoftemples.sort()
+        output(listoftemples.sort((a, b) => b.templeName.localeCompare(a.templeName)))
     }
-    output(listoftemples)
 }
 // Step 9: Add a change event listener to the HTML element with an ID of sortBy that calls the sortBy function
+document.getElementById("sortBy").addEventListener("change", sortBy)
 
 /* STRETCH */
 
 // Consider adding a "Filter by" feature that allows users to filter the list of temples
 // This will require changes to both the HTML and the JavaScript files
+function filterBy()
+{
+    reset()
+    var filteropt = document.getElementById("filterBy")
+    var text = filteropt.options[filteropt.selectedIndex].value
+
+    var inputText = document.getElementById("filterText").value
+    if(text === "templeName")
+    {
+        output(listoftemples.filter(temple => String(temple.templeName).includes(inputText)))
+    }
+    else if(text === "location")
+    {
+        output(listoftemples.filter(temple => String(temple.location).includes(inputText)))
+    }
+    else if(text === "dedicated")
+    {
+        output(listoftemples.filter(temple => String(temple.dedicated).includes(inputText)))
+    }
+}
+
+document.getElementById("filterButton").addEventListener("click", filterBy)

@@ -43,6 +43,16 @@
                     <option value="templeNameDescending">Temple Name Descending</option>
                 </select>
             </p>
+            <p>
+                Filter by: 
+                <select id="filterBy">
+                    <option value="templeName">Temple Name Containing..</option>
+                    <option value="location">Location Containing..</option>
+                    <option value="dedicated">Dedicated Date Containing..</option>
+                </select>
+                <input type="text" id="filterText" value="">
+                <button id="filterButton">Filter</button>
+            </p>
             <div id="temples">
             </div>
         </section>
