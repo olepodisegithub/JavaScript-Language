@@ -149,16 +149,17 @@ function filterBy()
     var inputText = document.getElementById("filterText").value
     if(text === "templeName")
     {
-        output(listoftemples.filter(temple => String(temple.templeName).includes(inputText)))
+        output(listoftemples.filter(temple => String(temple.templeName).toLocaleLowerCase().includes(inputText.toLocaleLowerCase())))
     }
     else if(text === "location")
     {
-        output(listoftemples.filter(temple => String(temple.location).includes(inputText)))
+        output(listoftemples.filter(temple => String(temple.location).toLocaleLowerCase().includes(inputText.toLocaleLowerCase())))
     }
     else if(text === "dedicated")
     {
-        output(listoftemples.filter(temple => String(temple.dedicated).includes(inputText)))
+        output(listoftemples.filter(temple => String(temple.dedicated.toLocaleLowerCase()).includes(inputText.toLocaleLowerCase())))
     }
 }
 
 document.getElementById("filterButton").addEventListener("click", filterBy)
+document.getElementById("filterText").addEventListener("input", filterBy)
