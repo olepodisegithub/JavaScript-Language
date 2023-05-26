@@ -5,6 +5,8 @@ function output(families)
 {
     console.log(families)
 
+    reset()
+
     families.map(display)
 
     function display(item) 
@@ -17,8 +19,8 @@ function output(families)
         const father = document.createElement("h6")
         father.innerText = "Father: "
         const imag = document.createElement("img")
-        imag.setAttribute("src",item.Photo)
         console.log(item.Photo)
+        imag.setAttribute("src",item.Photo)
         imag.setAttribute("alt",item.Name)
 
         art.appendChild(name)
@@ -75,44 +77,14 @@ fetch('family.csv')
 
 function reset()
 {
-    let parent = document.getElementById("temples"); 
+    let parent = document.getElementById("families"); 
     parent.replaceChildren(); 
-}
- 
-function sortBy()
-{
-    reset()
-    var sorttext = document.getElementById("sortBy")
-    var text = sorttext.options[sorttext.selectedIndex].value
-    if(text === "templeNameAscending")
-    {
-        output(listoftemples.sort((a, b) => a.templeName.localeCompare(b.templeName)))
-    }
-    else if(text === "templeNameDescending")
-    {
-        output(listoftemples.sort((a, b) => b.templeName.localeCompare(a.templeName)))
-    }
 }
 
 function filterBy()
 {
-    reset()
-    var filteropt = document.getElementById("filterBy")
-    var text = filteropt.options[filteropt.selectedIndex].value
-
-    var inputText = document.getElementById("filterText").value
-    if(text === "templeName")
-    {
-        output(listoftemples.filter(temple => String(temple.templeName).toLocaleLowerCase().includes(inputText.toLocaleLowerCase())))
-    }
-    else if(text === "location")
-    {
-        output(listoftemples.filter(temple => String(temple.location).toLocaleLowerCase().includes(inputText.toLocaleLowerCase())))
-    }
-    else if(text === "dedicated")
-    {
-        output(listoftemples.filter(temple => String(temple.dedicated.toLocaleLowerCase()).includes(inputText.toLocaleLowerCase())))
-    }
+  var inputText = document.getElementById("filterText").value
+  output(listoffamilies.filter(family => String(family.Name.toLocaleLowerCase()).includes(inputText.toLocaleLowerCase())))
 }
 
 document.getElementById("filterButton").addEventListener("click", filterBy)

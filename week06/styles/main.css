@@ -100,7 +100,7 @@ section {
     vertical-align: top;
 }
 
-#temples {
+#families {
     display: grid;
     grid-template-columns: 1fr;
 }
@@ -120,13 +120,13 @@ section {
         margin: 0 10px;
     }
 
-    #temples {
+    #families {
         grid-template-columns: 1fr 1fr;
     }
 }
 
 @media only screen and (min-width: 64em) {
-    #temples {
+    #families {
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
