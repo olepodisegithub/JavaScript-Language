@@ -4,7 +4,7 @@ IndividualID,Name,Gender,MotherID,FatherID,HusbandWifeID,Photo,Gender,FamilyOrde
 3,Thabelo Gift Lepodise,Female,2,1,0,images/thabelo.jpg,Female,1,EndCol
 4,Ncheledi Lepodisi,Female,14,15,20,images/placeholder.png,Female,4,EndCol
 5,Choma Modise,Male,36,0,0,images/choma.jpg,Male,1,EndCol
-6,Ontiretse Odo Lepodisi,Male,4,12,0,images/placeholder.png,Male,2,EndCol
+6,Ontiretse Odo Lepodisi,Male,4,12,0,images/odo.jpg,Male,2,EndCol
 7,Gomolemo Suna Mmaebeke Lepodisi,Female,4,12,0,images/placeholder.png,Female,3,EndCol
 8,Mosala Salis Lepodisi,Male,4,12,0,images/placeholder.png,Male,4,EndCol
 9,Masego Mmaololo Thuthugwane Lepodisi,Female,4,12,0,images/placeholder.png,Female,5,EndCol
